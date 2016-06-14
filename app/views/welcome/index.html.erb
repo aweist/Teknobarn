@@ -3,9 +3,16 @@ body{
   background-color: rgba(0,0,0,0.9);
   text-align: center;
 }
-img{
+#logo{
+  max-width: 924px;
   width:75%;
+  margin-bottom: 20px;
+}
+#date{
+  max-width: 833px;
+  width:80%;
 }
 </style>
-<%= image_tag 'goat_redemption_blue.png' %>
-<%= image_tag 'teknobarn_date_banner.png' %>
+<%= image_tag('goat_redemption_blue_banner_year.png', id: 'logo')%>
+<br>
+<%= image_tag('teknobarn_date_banner.png', id: 'date')%>
