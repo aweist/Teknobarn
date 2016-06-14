@@ -12,9 +12,9 @@ def show
 end
 
 def rsvp
-  @user = User.find_by_email(params[:email_address])
-  session[:current_user_id] = @user.id
-  logger.debug "Current session user: #{session[:current_user_id]}"
+  @user = User.find(params[:id])
+  session[:current_user] = @user
+  logger.debug "Current session user: #{session[:current_user]}"
 end
 
 def rsvp_save
