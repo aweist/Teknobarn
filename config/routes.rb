@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'users/rsvp/:user_id' => 'users#forward_user'
-  get 'users/rsvp/' => 'users#rsvp'
+  get 'users/rsvp/:email_address' => 'users#rsvp'
   post 'users/rsvp' => 'users#rsvp_save'
   get 'users/send_invites' => 'users#send_invites'
   post 'users/send_invites' => 'users#send_invites'

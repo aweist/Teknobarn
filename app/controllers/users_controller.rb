@@ -11,18 +11,14 @@ def show
   @users = User.all.order(:last_name)
 end
 
-def forward_user
-  user_id = session[:current_user_id] = params[:user_id]
-  User.increment_counter :clicked_invite, user_id
-  redirect_to action:'rsvp'
-end
-
 def rsvp
+  @user = User.find_by_email(params[:email_address])
+  session[:current_user_id] = @user.id
   logger.debug "Current session user: #{session[:current_user_id]}"
-  @user = User.find_by_id(session[:current_user_id])
 end
 
 def rsvp_save
+  user_id = session[:current_user_id] = params[:email_address]
   params[:response]
   logger.debug "Person attributes hash: #{params[:response]}"
   user = User.find_by_id(session[:current_user_id])
