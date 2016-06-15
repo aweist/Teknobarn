@@ -1,52 +1,29 @@
-<h1>All users</h1>
+<p id="notice"><%= notice %></p>
 
-<table class="users" cellspacing=0 cellpadding = 0>
-  <tr>
-    <th>
-    </th>
-    <th>
-      ID
-    </th>
-    <th>
-      Name
-    </th>
-    <th>
-      Email
-    </th>
-    <th>
-      RSVP
-    </th>
-    <th>
-      Clicked
-    </th>
-  </tr>
-  <% @users.each_with_index do |user, index| %>
-    <tr>
-      <td>
-        <%= index+1%>
-      </td>
-      <td>
-        <%= user.id %>
-      </td>
-      <td>
-        <%= user.full_name %>
-      </td>
-      <td>
-        <%= user.email %>
-      </td>
-      <td>
-        <%= user.rsvp %>
-      </td>
-      <td>
-        <%= user.clicked_invite %>
-      </td>
-    </tr>
-  <% end %>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><%= @users.where(:rsvp => true).count %></td>
-  </tr>
-</table>
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Rsvp:</strong>
+  <%= @user.rsvp %>
+</p>
+
+<p>
+  <strong>Clicked invite:</strong>
+  <%= @user.clicked_invite %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

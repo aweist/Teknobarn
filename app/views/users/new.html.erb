@@ -1,17 +1,15 @@
-<h1>New User</h1>
+<div class="container-fluid">
+  <h1>New User</h1>
 
-<%= form_for :user, url: users_path do |f| %>
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
- 
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+  <%= form_tag('/users') do %>
+    <div class='form-group'>
+      <%= text_area_tag(:csv, nil, :class => 'form-control', :placeholder => 'FirstName, LastName, Email') %>
+    </div>
+    <%= button_tag('Submit', :class => 'btn btn-primary') %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#csv").autoGrow();
+  });
+</script>
