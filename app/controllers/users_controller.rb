@@ -33,6 +33,10 @@ class UsersController < ApplicationController
     logger.debug "Current session user: #{session[:current_user]}"
   end
 
+  def confirm
+    @user = User.find(params[:id])
+  end
+
   def rsvp_save
     session[:user] = User.find_by_id(params[:id])
     params[:response]

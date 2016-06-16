@@ -2,4 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{}
+body{
+  color: #676767;
+  #rsvp_header_img{
+    width:75%;
+    max-width: 550px;
+  }
+}

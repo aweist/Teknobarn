@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   post 'users/send_invites' => 'users#send_invites'
   get 'about' => 'welcome#about'
 
-  resources :users
+  resources :users do
+    member do
+      get 'confirm'
+    end
+  end
 
   root 'welcome#index'
 
