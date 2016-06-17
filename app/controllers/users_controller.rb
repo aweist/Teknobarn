@@ -22,9 +22,6 @@ class UsersController < ApplicationController
     csv = params[:csv]
     csv.lines.each do |line|
       user_hash = line.split("\t")
-      logger.debug "first: #{user_hash[0]}"
-      logger.debug "last: #{user_hash[1]}"
-      logger.debug "email: #{user_hash[2]}"
       User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2].strip)
     end
     redirect_to controller:'users', action:'index'
@@ -51,8 +48,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if request.post?
       @user.update(size: params[:shirt_size])
+      @user.update(rsvp: 'y')
       redirect_to controller:'users', action:'success'
     end
+  end
+
+  def decline
+    @user = User.find(params[:id])
+    @user.update(rsvp: 'n')
   end
 
   def success

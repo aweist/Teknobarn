@@ -9,6 +9,6 @@
   </div>
   <div id='rsvp' class='col-sm-6 col-sm-offset-3'>
     <p><%= link_to('Attending', confirm_user_path(@user), class: 'btn btn-success btn-lg btn-block')%></p>
-    <p><%= link_to('Missing Out', confirm_user_path(@user), class: 'btn btn-danger btn-lg btn-block')%></p>
+    <p><%= link_to('Missing Out', decline_user_path(@user), class: 'btn btn-danger btn-lg btn-block')%></p>
   </div>
 </div>

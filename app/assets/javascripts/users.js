@@ -1,8 +1,7 @@
 $(function(){
-  $('#shirt_size').change(function(event) {
-    console.log("enabling");
-    $('#confirm-btn').prop('disabled',false);
+  $(document).on('change','#shirt_size', function() {
+    $('#confirm-btn').prop('disabled', false);
   });
 
   $("#csv").autoGrow();
-})
+});
