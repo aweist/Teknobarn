@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       logger.debug "first: #{user_hash[0]}"
       logger.debug "last: #{user_hash[1]}"
       logger.debug "email: #{user_hash[2]}"
-      User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2])
+      User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2].strip)
     end
     redirect_to controller:'users', action:'index'
   end
