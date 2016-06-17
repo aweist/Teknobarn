@@ -18,5 +18,7 @@
 //= require sweetalert2
 //= require sweet-alert-confirm
 //= require owl.carousel
+//= require moment
+//= require bootstrap-sortable
 //= require_tree .
 

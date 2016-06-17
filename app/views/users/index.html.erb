@@ -3,16 +3,19 @@
 
   <h1>All users</h1>
 
-  <table class="table table-striped users text-left" cellspacing=0 cellpadding = 0>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>RSVP</th>
-      <th>Clicked</th>
-      <th></th>
-      <th></th>
-    </tr>
+  <table class="table table-striped users text-left sortable" cellspacing=0 cellpadding = 0>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>RSVP</th>
+        <th>Clicked</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
     <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= user.id %></td>
@@ -31,6 +34,7 @@
           <% end %>
         </td>
       </tr>
+    </tbody>
     <% end %>
   </table>
   <div>Attending: <%= @users.where(rsvp: true).count %></div>

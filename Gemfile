@@ -37,6 +37,9 @@ gem 'sweet-alert-confirm'
 
 gem 'owlcarousel-rails'
 
+gem 'momentjs-rails'
+gem 'rails_bootstrap_sortable'
+
 gem 'puma'
 
 gem 'aws-ses', '~> 0.6.0', :require => 'aws/ses'
