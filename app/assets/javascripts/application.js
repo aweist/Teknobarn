@@ -15,5 +15,8 @@
 //= require turbolinks
 //= require autogrowtextarea.min
 //= require bootstrap-sprockets
+//= require sweetalert2
+//= require sweet-alert-confirm
+//= require owl.carousel
 //= require_tree .
 

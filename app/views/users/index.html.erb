@@ -1,9 +1,9 @@
-<div class='container-fluid'>
+<div id='users-report' class='container-fluid'>
   <p id="notice"><%= notice %></p>
 
   <h1>All users</h1>
 
-  <table class="table table-striped users" cellspacing=0 cellpadding = 0>
+  <table class="table table-striped users text-left" cellspacing=0 cellpadding = 0>
     <tr>
       <th>ID</th>
       <th>Name</th>
@@ -26,7 +26,7 @@
           <% end %>
         </td>
         <td>
-          <%= link_to edit_user_path(user.id) do %>
+          <%= link_to(user_path(user.id), method: :delete, data: { confirm: "Are you certain you want to delete #{user.full_name}" }) do %>
             <span class='glyphicon glyphicon-remove'></span>
           <% end %>
         </td>

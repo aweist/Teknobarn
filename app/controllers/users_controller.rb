@@ -22,6 +22,12 @@ class UsersController < ApplicationController
     redirect_to controller:'users', action:'index'
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_path
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -34,6 +40,14 @@ class UsersController < ApplicationController
   end
 
   def confirm
+    @user = User.find(params[:id])
+    if request.post?
+      @user.update(size: params[:shirt_size])
+      redirect_to controller:'users', action:'success'
+    end
+  end
+
+  def success
     @user = User.find(params[:id])
   end
 

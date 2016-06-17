@@ -5,7 +5,6 @@ ruby '2.2.2'
 gem 'rails', '4.2.0'
 
 gem 'bootstrap-sass'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,6 +31,11 @@ gem 'jbuilder', '~> 2.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'sweetalert2'
+gem 'sweet-alert-confirm'
+
+gem 'owlcarousel-rails'
 
 gem 'puma'
 

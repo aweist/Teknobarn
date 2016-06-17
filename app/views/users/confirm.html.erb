@@ -1,11 +1,42 @@
-<div class="container">
-  <div id='header'>
-    <%= image_tag 'goat_redemption_blue_light_no_year.png', id: 'rsvp_header_img'%>
-    <h3>
-      Jul 29-31, 2015<br>
-      Leesport, PA
-    </h3>
-  </div>
-  <div id='rsvp' class='col-sm-6 col-sm-offset-3'>
-  </div>
+<div class="container-fluid">
+  <%= image_tag 'goat_redemption_blue_small.png'%>
+  <h3>
+    Jul 29-31, 2015<br>
+    Leesport, PA
+  </h3>
+  <%= form_tag(confirm_user_path(@user), class: 'col-sm-4 col-sm-offset-4') do %>
+    <p>
+      <% @size_options = options_for_select([['Select Shirt Size',''],['Small','sm'],['Medium','md'],['Large','lg'],['X-Large','xl']], selected: '', disabled: '') %>
+      <div class='row'>
+        <div class='col-sm-6 col-sm-offset-3'>
+          <%= select_tag('shirt_size', @size_options, class: 'form-control input-lg') %>
+        </div>
+      </div>
+    </p>
+    <h4>
+      <%= link_to 'About Teknobarn', about_path %>
+    </h4>
+
+    <h4>
+      IMPORTANT DETAILS
+    </h4>
+    <h4>
+      Welcome to the madness!
+    </h4>
+    <h4>
+      To confirm your spot, please remit payment via Venmo to Andrew Weist (@aweist) in the amount of <span style='color:#337ab7'>$85</span>. You're registration is not confirmed until payment is received, and we will very likely run out of room this year, so please do this ASAP.
+    </h4>
+    <h4>
+      If Venmo absolutely isn't an option for you, please let him know (andrew.weist@gmail.com), and you can arrange an alternative form of payment.
+    </h4>
+    <h4>
+      This year will be <b><u>tent camping only</u></b> due to the anticipated number of attendees not being able to fit in the Weist household.  Please let Andy know if you have any serious issues with camping (allergies, etc.), or will have difficulty procuring a tent to use.  We'll have plenty of tent space as long as we plan ahead.
+      <br>
+      <br>
+      Let the countdown begin
+    </h4>
+
+    <%= submit_tag('Confirm', id: 'confirm-btn', class: 'btn btn-success btn-lg btn-block', disabled: 'disabled')
+    %>
+  <% end %>
 </div>
