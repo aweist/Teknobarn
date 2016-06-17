@@ -3,4 +3,6 @@ $(function(){
     console.log("enabling");
     $('#confirm-btn').prop('disabled',false);
   });
+
+  $("#csv").autoGrow();
 })

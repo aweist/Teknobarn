@@ -19,6 +19,14 @@ class UsersController < ApplicationController
 
   def create
     flash[:notice] = 'Sucessfully created users'
+    csv = params[:csv]
+    csv.lines.each do |line|
+      user_hash = line.split("\t")
+      logger.debug "first: #{user_hash[0]}"
+      logger.debug "last: #{user_hash[1]}"
+      logger.debug "email: #{user_hash[2]}"
+      User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2])
+    end
     redirect_to controller:'users', action:'index'
   end
 
