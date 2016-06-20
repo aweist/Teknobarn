@@ -39,5 +39,5 @@
     </tbody>
     <% end %>
   </table>
-  <div>Attending: <%= @users.where(rsvp: true).count %></div>
+  <div>Attending: <%= @users.where(rsvp: 'y').count %></div>
 </div>
