@@ -11,6 +11,7 @@
         <th>Email</th>
         <th>RSVP</th>
         <th>Clicked</th>
+        <th>Updated</th>
         <th></th>
         <th></th>
       </tr>
@@ -23,6 +24,7 @@
         <td><%= user.email %></td>
         <td><%= user.rsvp %></td>
         <td><%= user.clicked_invite %></td>
+        <td><%= user.updated_at %></td>
         <td>
           <%= link_to edit_user_path(user) do %>
             <span class='glyphicon glyphicon-pencil'></span>
