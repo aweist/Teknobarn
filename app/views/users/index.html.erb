@@ -26,7 +26,7 @@
         <td><%= user.rsvp %></td>
         <td><%= user.size %></td>
         <td><%= user.clicked_invite %></td>
-        <td><%= user.updated_at %></td>
+        <td><%= user.updated_at.in_time_zone("Eastern Time (US & Canada)") %></td>
         <td>
           <%= link_to edit_user_path(user) do %>
             <span class='glyphicon glyphicon-pencil'></span>
