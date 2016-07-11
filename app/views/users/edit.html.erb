@@ -24,6 +24,13 @@
         <%= u.select('rsvp', options_for_select(['t','f'], 'f'), {}, class: 'form-control input-lg') %>
       </div>
     </div>
+    <div class='form-group'>
+      <%= label_tag('Size', 'Size', class:'col-sm-2 control-label') %>
+      <div class='col-sm-4'>
+        <% @size_options = options_for_select([['Select Shirt Size',''],['Small','sm'],['Medium','md'],['Large','lg'],['X-Large','xl']], selected: '', disabled: '') %>
+        <%= u.select('size', @size_options, {}, class: 'form-control input-lg') %>
+      </div>
+    </div>
     <%= button_tag('Submit', :class => 'btn btn-primary') %>
   <% end %>
 </div>
