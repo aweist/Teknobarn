@@ -18,6 +18,12 @@
         <%= u.text_field(:email, class: 'form-control')%>
       </div>
     </div>
+    <div class='form-group'>
+      <%= label_tag('RSVP', 'RSVP', class:'col-sm-2 control-label') %>
+      <div class='col-sm-4'>
+        <%= u.select('rsvp', options_for_select(['t','f'], 'f'), {}, class: 'form-control input-lg') %>
+      </div>
+    </div>
     <%= button_tag('Submit', :class => 'btn btn-primary') %>
   <% end %>
 </div>
