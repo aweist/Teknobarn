@@ -21,7 +21,7 @@
     <div class='form-group'>
       <%= label_tag('RSVP', 'RSVP', class:'col-sm-2 control-label') %>
       <div class='col-sm-4'>
-        <%= u.select('rsvp', options_for_select(['t','f'], @user.rsvp), {}, class: 'form-control input-lg') %>
+        <%= u.select('rsvp', options_for_select(['y','n'], @user.rsvp), {}, class: 'form-control input-lg') %>
       </div>
     </div>
     <div class='form-group'>
