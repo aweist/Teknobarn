@@ -1,7 +1,15 @@
 body{
   background-color: rgba(0,0,0,0.9);
+  background-image: url('/assets/bg.png');
   text-align: center;
-  color: #676767;
+  color: #333333;
+}
+
+#logo{
+  max-width: 550px;
+  width:75%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .green{
@@ -10,4 +18,8 @@ body{
 
 .red{
   color:red;
+}
+
+.teal{
+  color:#337ab7;
 }

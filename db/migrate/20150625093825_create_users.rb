@@ -1,4 +1,4 @@
-class CreateUsers < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration[5.0]
   def change
     drop_table :users if ActiveRecord::Base.connection.table_exists? :users
     create_table :users do |t|

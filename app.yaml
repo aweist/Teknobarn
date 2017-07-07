@@ -1,0 +1,13 @@
+entrypoint: bundle exec rackup --port $PORT
+env: flex
+runtime: ruby
+
+env_variables:
+  SECRET_KEY_BASE: 72af4e5d382a97c4829465ea4db1f58274c56739d7a09df9b8e2349d232a010c87281ad394646a130596e23d4262c6a04d03c7923d79244eb6f224d156f9060f
+  DB_NAME: postgres
+  DB_USERNAME: postgres
+  DB_PASSWORD: qteSaKV7
+  DB_HOSTNAME: 104.196.4.253
+
+health_check:
+  enable_health_check: False

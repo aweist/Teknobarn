@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <%= image_tag 'goat_redemption_blue_small.png'%>
+  <%= image_tag 'bull_800.png', id:'small_logo'%>
   <h3>
-    Jul 29-31, 2015<br>
+    Jul 21-23, 2017<br>
     Leesport, PA
   </h3>
-  <%= form_tag(confirm_user_path(@user), class: 'col-sm-4 col-sm-offset-4') do %>
+  <%= form_tag(confirm_user_path(@user), class: 'col-sm-6 col-sm-offset-3') do %>
     <p>
       <% @size_options = options_for_select([['Select Shirt Size',''],['Small','sm'],['Medium','md'],['Large','lg'],['X-Large','xl']], selected: '', disabled: '') %>
       <div class='row'>
@@ -24,19 +24,23 @@
       Welcome to the madness!
     </h4>
     <h4>
-      To confirm your spot, please remit payment via Venmo to Andrew Weist (@aweist) in the amount of <span style='color:#337ab7'>$85</span>. Your registration is not confirmed until payment is received, and we will very likely run out of room this year, so please do this ASAP.
+      To confirm your spot, please Venmo Andrew Weist (@aweist) in the amount of <span style='color:#337ab7'>$85</span>.
     </h4>
     <h4>
-      If Venmo absolutely isn't an option for you, please let him know (andrew.weist@gmail.com), and you can arrange an alternative form of payment.
+      If Venmo doesn't work for you, please let him know (info@teknobarn.com), and you can arrange an alternative form of payment.
     </h4>
     <h4>
-      This year will be <b><u>tent camping only</u></b> due to the anticipated number of attendees not being able to fit in the Weist household.  Please let Andy know if you have any serious issues with camping (allergies, etc.), or will have difficulty procuring a tent to use.  We'll have plenty of tent space as long as we plan ahead.
+      This year will be <b><u>tent camping only</u></b>. You will need to bring your own tent, sleeping bag, etc. Please let Andy know if you will have difficulty procuring a tent to use.  We'll have plenty of tent space as long as we plan ahead.
       <br>
       <br>
       Let the countdown begin
     </h4>
 
-    <%= submit_tag('Confirm', id: 'confirm-btn', class: 'btn btn-success btn-lg btn-block', disabled: 'disabled')
+    <%= submit_tag('select shirt size first', id: 'confirm-btn', class: 'btn btn-success btn-lg btn-block', disabled: 'disabled')
     %>
+    <br>
+    <br>
+    <br>
+    <br>
   <% end %>
 </div>

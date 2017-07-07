@@ -22,12 +22,13 @@ class UsersController < ApplicationController
     csv = params[:csv]
     csv.lines.each do |line|
       user_hash = line.split("\t")
-      User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2].strip)
+      User.create(first_name: user_hash[0], last_name: user_hash[1], email: user_hash[2].to_s.strip)
     end
     redirect_to controller:'users', action:'index'
   end
 
   def destroy
+    puts "hit destroy"
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_path
@@ -73,13 +74,6 @@ class UsersController < ApplicationController
     end
     user.save!
     redirect_to controller:'welcome', action:'index'
-  end
-
-  def send_invites
-    if request.get?
-    else
-      User.send_invites
-    end
   end
 
   private
